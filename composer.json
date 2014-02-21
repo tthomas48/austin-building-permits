@@ -1,8 +1,10 @@
 {
     "require": {
-      "wp-cli/php-cli-tools": "dev-master"
-
+      "wp-cli/php-cli-tools": "dev-master",
+      "guzzle/guzzle": "dev-master",
+      "amstaff/simplehtmldom": "dev-master"
     },
-	    "classmap": ["lib"]
-    },
+    "autoload": {
+        "psr-0": {"ABP": "lib/"}
+    }
 }
