@@ -11,3 +11,4 @@ Getting Started
 * db/schema.sql contains the database table creation script
 * geocode.php uses Texas A&M's geocoding API to geocode records
 * db/geocode.sql contains the geocode table creation script
+* copy geocode_api_key.php.sample to geocode_api_key.php and enter your API key to run the gecoder
