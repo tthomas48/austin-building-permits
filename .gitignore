@@ -1,3 +1,4 @@
 vendor
 composer.lock
 data
+geocode_api_key.php

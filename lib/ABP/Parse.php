@@ -5,23 +5,17 @@ class Parse
 {
 
     private $dataDirectory;
+    private $database;
 
     public function __construct($dataDirectory)
     {
         $this->dataDirectory = $dataDirectory;
-    }
-
-    public function initDatabase()
-    {
-        $dbh = new \PDO('mysql:host=localhost;dbname=abp', "abp", "abp");
-        $dbh->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-        $dbh->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
-        return $dbh;
+        $this->database = new Database();
     }
 
     public function parse()
     {
-        $dbh = $this->initDatabase();
+        $dbh = $this->database->initDatabase();
         $sql = "insert ignore into austin_building_permits (permit_number, sub_type, work_type, permit_location, date_issued, work_description, `status`, 
                 folder_owner, folder_owner_addrhouse, folder_owner_addrstreet, folder_owner_addrstreettype, folder_owner_addrunittype, folder_owner_addrunit, 
                 folder_owner_addrcity, folder_owner_addrprovince, folder_owner_addrpostal, folder_owner_phone, property_owner, property_owner_addrhouse, 
